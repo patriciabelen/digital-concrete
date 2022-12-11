@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>* ping *</title>
+<link rel="stylesheet" href="https://use.typekit.net/iyj4smq.css">
+<link rel="stylesheet" href="styles.css">
+<style>  
+
+.addText {
+  display:inline-block; 
+  color: rgba(255,255,255,0);
+  transition: .2s;
+  transform: translateX(100%);
+}
+
+.link:hover .addText {
+  color: #000;
+  transform: translateX(0);
+}
+.addText2 {
+  display:inline-block; 
+  color: rgba(255,255,255,0);
+  transition: .2s;
+  transform: translateX(100%);
+}
+.link2:hover .addText2 {
+  color: #000;
+  transform: translateX(310px);
+}
+.addText3 {
+  display:inline-block; 
+  color: rgba(255,255,255,0);
+  transition: .2s;
+  transform: translateX(100%);
+}
+.link3 {
+	margin-left: -8px;
+}
+.link3:hover .addText3 {
+  color: #000;
+  transform: translateX(0px);
+}
+.link4 {
+	margin-left: 157px;
+}
+.addText4 {
+  display:inline-block; 
+  color: rgba(255,255,255,0);
+  transition: .2s;
+  transform: translateX(100%);
+}
+.link4:hover .addText4 {
+  color: #000;
+  transform: translateX(215px);
+}
+
+</style>
+</head>
+<body class="neue">
+	
+<!-- sidebar -->	
+<div id="mySidebar" class="sidebar">
+<div id="includedContent">
+</div>  
+</div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <button class="image"></button>
+</div>
+<div class="cursors">
+<div><span></span></div>
+</div>
+<!-- end sidebar -->	
+
+
+<article class="center-container" data-hover="hover hover hover">
+  <div>
+<h4 class="link"><span class="addText">ping pong </span> ping pong</h4>
+<h4 class="link2"><span class="addText2">ping pong ping </span> ping pong ping</h4>
+<h4 class="link3"><span class="addText3">pong ping pong </span> pong ping pong</h4>
+<h4 class="link4"><span class="addText4">ping pong </span> ping pong</h4>
+  </div>
+
+</article>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="basicLightbox.min.js"></script>
+<script src="script.js"></script>
+<script>
+	document.querySelector('button.image').onclick = () => {
+	basicLightbox.create('<img src="images/ping.jpg">').show()
+}
+</script>
+
+</body>
+</html>

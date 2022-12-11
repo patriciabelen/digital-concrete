@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>* wind *</title>
+<link rel="stylesheet" href="https://use.typekit.net/iyj4smq.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+	.dot {
+	font-weight:400;
+	font-size: 4em;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+</style>
+</head>
+<body class="neue">
+	
+<!-- sidebar -->	
+<div id="mySidebar" class="sidebar">
+<div id="includedContent">
+</div>  
+</div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <button class="image"></button>
+</div>
+<div class="cursors">
+<div><span></span></div>
+</div>
+<!-- end sidebar -->	
+
+
+<article class="center-container" data-hover="click click click">
+
+
+
+</article>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="basicLightbox.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+	document.querySelector('button.image').onclick = () => {
+	basicLightbox.create('<img src="images/wind.jpg">').show()
+}
+	
+	
+	
+$('article').click(function(e){
+	 
+var words = [
+    'w',
+    'i',
+    'n', 
+    'd'
+    ];
+
+var getRandomWord = function () {
+      return words[Math.floor(Math.random() * words.length)];
+    };
+    
+	 
+    var x = e.pageX - this.offsetLeft;
+    var y = e.pageY - this.offsetTop;
+    $('body').append('<div class="dot" style="top:' + y + 'px; left:' + e.pageX + 'px">' + getRandomWord() + '</div>');
+});
+</script>
+
+</body>
+</html>

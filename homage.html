@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>* homage *</title>
+<link rel="stylesheet" href="https://use.typekit.net/iyj4smq.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page {
+font-size: 40px;
+line-height: 80px;
+text-align: center;
+color: #000; 
+min-height: 100vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.section-wrapper {
+width: 335px;
+}
+section {
+width: 100%;
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+grid-auto-rows: 50px;
+}
+
+div.single {
+font-weight: 300;
+transform: scale(0.6);
+}
+</style>
+</head>
+<body>
+	
+<!-- sidebar -->	
+<div id="mySidebar" class="sidebar">
+<div id="includedContent">
+</div>  
+</div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <button class="image"></button>
+</div>
+<div class="cursors">
+<div><span></span></div>
+</div>
+<!-- end sidebar -->	
+
+<article class="page" data-hover="move cursor">
+	<div class="section-wrapper">
+		<h5>homage to gomringer</h5>
+    <section>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">g</div>
+
+  <div class="single">g</div>
+  <div class="single">o</div>
+  <div class="single">n</div>
+  <div class="single">o</div>
+  <div class="single">n</div>
+  <div class="single">o</div>
+  <div class="single">n</div>
+  <div class="single">o</div>
+  <div class="single">n</div>
+  <div class="single">o</div>
+  
+  <div class="single">o</div>
+  <div class="single">m</div>
+  <div class="single">g</div>
+  <div class="single">m</div>
+  <div class="single">g</div>
+  <div class="single">m</div>
+  <div class="single">g</div>
+  <div class="single">m</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  
+  <div class="single">g</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">o</div>
+  
+  <div class="single">o</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">i</div>
+  <div class="single">g</div>
+  
+  <div class="single">g</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">n</div>
+  <div class="single">o</div>
+  
+  <div class="single">o</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+  <div class="single">g</div>
+
+  <div class="single">g</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">e</div>
+  <div class="single">o</div>
+  
+  <div class="single">o</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">r</div>
+  <div class="single">g</div>
+</section>
+<h5 style="margin-left: 150px">(j.r.)</h5>
+	</div>
+</article>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="basicLightbox.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.querySelector('button.image').onclick = () => {
+	basicLightbox.create('<img src="images/homage.jpg">').show()
+}
+	
+	
+	document.addEventListener("mousemove", function (event) {
+  const x = event.pageX
+  const y = event.pageY
+ 
+  document.querySelectorAll("section > div").forEach(div => {
+		const dx = (div.offsetLeft + 100) - x
+    const dy = (div.offsetTop + 100) - y
+    const dist = Math.sqrt(dx * dx + dy * dy)
+    
+    const score = Math.exp(dist * -0.002)
+    
+    div.style.transform = "scale(" + score + ")"
+    div.style.fontWeight = 100 + (100 * Math.floor(8 * score))
+  })
+})
+</script>
+</body>
+</html>

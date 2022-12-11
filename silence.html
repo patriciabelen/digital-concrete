@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>* silence *</title>
+<link rel="stylesheet" href="https://use.typekit.net/iyj4smq.css">
+<link rel="stylesheet" href="styles.css">
+<style>  
+.zoom {
+  transition: all 8s;
+  margin: 0;
+  opacity:1;
+    transform: scale(1); 
+    
+}
+
+.zoom:hover {
+  transform: scale(8); 
+  opacity:0;
+      z-index: 101;
+
+}
+.space {
+	visibility: hidden;
+}
+.zoom2 {
+  transition: all 3s;
+  margin: 50px 50px 300px 500px;
+  opacity:1;
+}
+
+.zoom2:hover {
+  transform: scale(8); 
+  opacity:0;
+}
+
+</style>
+</head>
+<body>
+	
+<!-- sidebar -->	
+<div id="mySidebar" class="sidebar">
+<div id="includedContent">
+</div>  
+</div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <button class="image"></button>
+</div>
+<div class="cursors">
+<div><span></span></div>
+</div>
+<!-- end sidebar -->	
+
+
+<article id="col" class="center-container" data-hover="hover hover hover">
+	
+<div class="zoom2 neue">
+<h6>schweigen schweigen schweigen</h6>
+<h6>schweigen schweigen schweigen</h6>
+<h6>schweigen <span class="space">schweigen</span> schweigen</h6>
+<h6>schweigen schweigen schweigen</h6>
+<h6>schweigen schweigen schweigen</h6>
+<h6>schweigen schweigen schweigen</h6>
+</div>
+	
+<div class="zoom">
+<h6>silence silence silence</h6>
+<h6>silence silence silence</h6>
+<h6>silence <span class="space">silence</span> silence</h6>
+<h6>silence silence silence</h6>
+<h6>silence silence silence</h6>
+</div>
+
+
+</article>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="basicLightbox.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+	document.querySelector('button.image').onclick = () => {
+	basicLightbox.create('<img src="images/silence.jpg">').show()
+}
+</script>
+
+
+</body>
+</html>

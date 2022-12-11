@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>* Front *</title>
+<link rel="stylesheet" href="https://use.typekit.net/iyj4smq.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+.book {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+div.face {
+  position: absolute;
+  background-size: cover;
+}
+
+div.face-cover {
+  height: 500px;
+  width: 325px;
+  background-image: url(images/book-cover.jpg);
+  transform: translateX(-50%) translateY(-50%) translateZ(25px);
+}
+
+div.face-side {
+  height: 500px;
+  width: 50px;
+  background-image: url(images/book-side.jpg);
+  transform: translateX(-50%) translateY(-50%) rotateY(90deg) translateZ(162.5px);
+}
+
+div.face-spine {
+  height: 500px;
+  width: 50px;
+  background-image: url(images/book-spine.jpg);
+  transform: translateX(-50%) translateY(-50%) rotateY(-90deg) translateZ(162.5px);
+}
+
+div.face-top {
+  height: 50px;
+  width: 325px;
+  background-image: url(images/book-top.jpg);
+  transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateZ(250px);
+}
+
+div.face-bottom {
+  height: 50px;
+  width: 325px;
+  background-image: url(images/book-bottom.jpg);
+  transform: translateX(-50%) translateY(-50%) rotateX(-90deg) translateZ(250px);
+}
+
+div.face-back {
+  height: 500px;
+  width: 325px;
+  background-image: url(images/book-back.jpg);
+  transform: translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(25px) ;
+}
+</style>
+</head>
+<body>
+<!-- sidebar -->	
+<div class="hsidebar">
+  <a href="index.html">Front</a>
+  <a href="homage.html">01 homage</a>
+  <a href="silence.html">02 silence</a>
+  <a href="ping.html">03 ping</a>
+  <a href="wind.html">04 wind</a>
+  <a href="hang.html">05 hang</a>
+  <a href="snow.html">06 snow</a>
+  <a href="mist.html">07 mist</a>
+  <a href="info.html">Info</a>
+</div>
+
+<!-- end sidebar -->	
+	
+
+
+<section class="book" >
+	<div class="face face-cover"></div>
+  <div class="face face-spine"></div>
+	<div class="face face-back"></div>
+	<div class="face face-top"></div>
+	<div class="face face-side"></div>
+	<div class="face face-bottom"></div>
+</section>
+
+<div class="inputs">
+</div>
+
+<script src="basicLightbox.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+let xDir = "rotateY"
+let yDir = "rotateX"
+
+document.addEventListener("mousemove", function (event) {
+  const x = event.pageX
+  const y = event.pageY
+  
+  const midX = x - window.innerWidth / 2
+  const midY = y - window.innerHeight / 2
+  
+  const box = document.querySelector("section")
+  
+  box.style.left = x + "px"
+  box.style.top = y + "px"
+  
+  box.style.transform = xDir + "(" + midX + "deg) " + yDir + "(" + midY + "deg)"
+})
+
+document.querySelectorAll("select").forEach(select => {
+  select.addEventListener("change", function () {
+    if (this.name == "xDir") {
+      xDir = this.value
+    } else {
+      yDir = this.value
+    }
+  })
+})	
+</script>
+</body>
+</html>

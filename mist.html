@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>* mist *</title>
+<link rel="stylesheet" href="https://use.typekit.net/iyj4smq.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+	.poem1, .poem2, .poem3 {
+	margin: 50px 0;
+	display: block;
+	list-style-type: none;
+}
+.poem1 li, .poem2 li, .poem3 li {
+line-height: 1.1;
+	font-weight:400;
+	font-size: 2em;
+}
+a#target {
+	display: block;
+}
+</style>
+</head>
+<body>
+	
+<!-- sidebar -->	
+<div id="mySidebar" class="sidebar">
+<div id="includedContent">
+</div>  
+</div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <button class="image"></button>
+</div>
+<div class="cursors">
+<div><span></span></div>
+</div>
+<!-- end sidebar -->	
+
+
+<article class="center-container" data-hover="click on words">
+    <div class="row"> 
+
+<ul class="poem1">
+	<li class="textbox1">mist</li>
+	<li>mountain</li>
+	<li>butterfly</li>
+</ul>
+
+<ul class="poem2">
+	<li>mountain</li>
+	<li>butterfly</li>
+	<li class="textbox2">missed</li>
+</ul>
+
+
+<ul class="poem3">
+	<li>butterfly</li>
+	<li class="textbox2">meets</li>
+	<li>mountain</li>
+</ul>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="basicLightbox.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.querySelector('button.image').onclick = () => {
+	basicLightbox.create('<img src="images/mist.jpg">').show()
+}
+	
+	
+var words = [
+    'mist',
+    'missed',
+    'meets'
+    ];
+
+var getRandomWord = function () {
+      return words[Math.floor(Math.random() * words.length)];
+    };
+    
+$(function() { // after page load
+  setInterval(function(){
+    $('.textbox1').fadeOut(100, function(){
+      $(this).html(getRandomWord()).fadeIn(100);
+    });
+    $('.textbox2').fadeOut(100, function(){
+      $(this).html(getRandomWord()).fadeIn(100);
+    });
+  // 2 seconds
+  }, 2000);
+});	
+	
+	
+	
+	
+	
+$('.poem1').click(function() {
+	shuffleElements( $('.poem1 li') );
+});
+
+$('.poem2').click(function() {
+	shuffleElements( $('.poem2 li') );
+});
+
+$('.poem3').click(function() {
+	shuffleElements( $('.poem3 li') );
+});
+
+function shuffleElements($elements) {
+	var i, index1, index2, temp_val;
+
+	var count = $elements.length;
+	var $parent = $elements.parent();
+	var shuffled_array = [];
+
+
+	// populate array of indexes
+	for (i = 0; i < count; i++) {
+		shuffled_array.push(i);
+	}
+
+	// shuffle indexes
+	for (i = 0; i < count; i++) {
+		index1 = (Math.random() * count) | 0;
+		index2 = (Math.random() * count) | 0;
+
+		temp_val = shuffled_array[index1];
+		shuffled_array[index1] = shuffled_array[index2];
+		shuffled_array[index2] = temp_val;
+	}
+
+	// apply random order to elements
+	$elements.detach();
+	for (i = 0; i < count; i++) {
+		$parent.append( $elements.eq(shuffled_array[i]) );
+	}
+}
+
+	
+</script>
+
+</body>
+</html>
