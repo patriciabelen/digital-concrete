@@ -107,15 +107,19 @@ i {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 400;
 }
 hr {
     border: 0;
     height: 1px;
-    margin: var(--space) auto;
+    margin: var(--space-large) auto;
     box-sizing: content-box;
-    height: 0;
     overflow: visible;
+    background-color: #000;
+}
+blockquote {
+	margin: var(--space-large);
+	font-weight: 400;
 }
 /*--------------------------------------------------------------
 # Links
